@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GHOST APP! SCARY!</title>
+    <header>
+        <a href="/admin/login/">
+       <button>Login</button> 
+        </a>
+    </header>
+    <h1>WELCOME TO THE SCARIEST APP IN THE WORLD</h1>
+</head>
+<body>
+Are you ready to learn the truth?
+<a href="{% url 'create_post' %}">
+   <button>Share your story...</button>
+</a>
+<h2>Feed</h2>
+<ul>
+     {% for post in posts %}
+<li>
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content }}</p>
+    <b> <p>Posted by {{ post.author }} on {{ post.dateposted }}</p></b>
+    
+    
+</li>
+     {% endfor %}
+    </ul>
+</body>
+</html>
